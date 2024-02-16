@@ -1,9 +1,13 @@
 
 /* 共通 */
-*{  
-    background-color: #FAF9F6;
+body{  
+    background-color: #ABA89A
 }
+main, footer{
+    background-color: #FAF9F6;
+    margin:0% 10%;
 
+}
 .u-tit01{
     margin: 30px 0px 0px;
     font-size: 24px;
@@ -29,9 +33,10 @@
   }
 
 /* webサイトパディング */
-.p-top01_inner_block, .p-top02, .p-top03, .p-top04, .p-top05{
-    padding:5% 10%
-}
+ .p-top01_inner_block, .p-top02, .p-top03, .p-top04, .p-top05{
+    padding:5% 10%; 
+
+} 
 
 /*================== メディクエリ =========================*/
 
@@ -52,12 +57,18 @@
     h2{
         text-align: center;
     }
+    main, footer{
+        background-color: #FAF9F6;
+        margin:0%;
+    
+    }
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
     h2{
         text-align: center;
         font-size: 30px;
     }
+
 }
 
 /* ===============スクロールすると下線部が引かれる============= */
@@ -114,8 +125,8 @@
 .popup-open {
    cursor: pointer;  /* マウスオーバーでカーソルの形状を変える */
     position: fixed;
-    right: 20px; 
-    width: 10vw;
+    right: 10px; 
+    width: 9vw;
     top: -1vw;
     z-index: 99998; /*目次なので目次メニューの次に前に来るようにする */
   }
@@ -186,8 +197,8 @@
   .popup-close{
     cursor: pointer;
     position: absolute;
-    right: 20px; 
-    width: 10vw;
+    right: 10px; 
+    width: 9vw;
     top: -1vw;
   }  
 
@@ -214,11 +225,10 @@
 
 /*＝＝＝＝＝＝＝＝＝ 1ページ目＝＝＝＝＝＝＝＝ */
 .p-title{
-    width: 100vw;
+    /* width: 100vw; */
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .p-title-pic{
@@ -269,8 +279,9 @@
     align-items: center;
     width: 60vw;
     height: auto;
-    border: 1px solid;
-    border-radius: 5%;
+    /* border: 1px solid #ABA89A;
+    border-radius: 5%; */
+    /* background-color: white; */
     }
 
     /* ４つの箱の上側二つ　子要素横にする */
@@ -281,6 +292,11 @@
     align-items: center;
     height: 100%;
     width: 100%;
+
+    border: 1px solid #ABA89A;
+    border-radius: 5%;
+    background-color: white;
+    margin: 10% 0;
 }
         /* 四つのハコの左上 */
 .p-top02-item-train01{
@@ -306,7 +322,11 @@
     align-items: center;
     height: 100%;
     width: 100%;
-    border-top: 1px black solid;
+    /* border-top: 1px #ABA89A solid; */
+    margin: 10% 0;
+    border: 1px solid #ABA89A;
+    border-radius: 5%;
+    background-color: white;
 }
         /* ４つの箱左下 */
 .p-top02-item-car01{
@@ -326,12 +346,17 @@
 }
 
 .p-top02-carmap{
+    color:white;
+    background-color: #ABA89A;
     padding: 10px;
-    border: 2px solid black;
     border-radius: 5%;
-    font: 24px bold;
+    font: 15px bold;
     margin:20%;
     text-align: center;
+}
+
+.p-top02-carmap:hover{
+    background-color: #A5CCDD;
 }
 
 .p-top02-item-car02 img, .p-top02-item-train02 img{
@@ -356,8 +381,9 @@
     .p-top02-item-bf{
         border: none;
         border-radius: 0%;
-        width: 100vw;
+        width: 80vw;
         height: auto;
+        background-color: #FAF9F6;
     }
 
     .p-top02-item-train{
@@ -407,8 +433,9 @@
     min-width: 120px;
     max-width: 100%;
     font-size: 16px;
-    background:#75CCF9;
+    background:#ABA89A;
     border-radius: 15px;
+    animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
   }
   
   .p-top02-item-hukidashi:before {
@@ -418,8 +445,16 @@
     left: 50%;
     margin-left: -10px;
     border: 7px solid transparent;
-    border-top: 15px solid #75CCF9;
+    border-top: 15px solid #ABA89A;
   } 
+
+  @keyframes floating-y {
+    0% {
+      transform: translateY(-5%);
+    }
+    100% {
+      transform: translateY(5%);
+    }}
 
     /* 横の箱３つ */
 .p-top02-item-side{
@@ -432,10 +467,10 @@
 
 .p-top02-item-walk, .p-top02-item-bus, .p-top02-item-bicycle{
     background-color:white;
-    border:1px black solid;
+    border:1px #ABA89A solid;
     border-radius: 2%;
     padding: 0px 20px;
-    margin: 0 0 30px 20px;
+    margin: 0 0 10% 10%;
 }
 
 /*細かい装飾 スタンプのところ*/
@@ -504,24 +539,25 @@ to {
     left: 65%;
 
 }
-.cameraMoveTrigger{
+/* .cameraMoveTrigger{
     opacity: 0;
-    }
+    } */
 
 .cameraMove {
-    animation-name:cameraAnime;
-    animation-duration:3s;
-    animation-fill-mode:forwards;
-    opacity:0;
+    transform-origin: center bottom;
+    animation: cameraAnime 2s linear ;
 }
 @keyframes cameraAnime{
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    0% {opacity: 0;
+        transform: rotate(10deg);
+    }25%{opacity: 1;
+        transform: rotate(-10deg);
+    }50%{opacity: 1;
+        transform: rotate(10deg);
+    } 75%{opacity: 1;
+        transform: rotate(0deg);
+    }100%{opacity: 1;
+        transform: rotate(0deg);
     }
     } 
 
@@ -553,17 +589,18 @@ to {
 
 
 .p-top03-shops{
-    width: 26vw;
-    height: 60vh;
+    height: 400px;
+    aspect-ratio: 3 / 4;
     padding: 20px;
     margin: 10px;
-    border: black 1px solid;
+    border: #ABA89A 2px solid;
     border-radius: 5%;
     background-color:#E7E5E0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    align-items: center;/*写真を中央配置にしてる*/
+    position: relative;/*子要素の写真の位置を決めるときに使ってる */
 }
 
 .p-top3-shopstitle{
@@ -576,13 +613,27 @@ to {
 }
 
 .shops{
-    width: 100%;
-    height:50%;
-    object-fit: cover;
+    width: 90%;
+    height:45%;
+    object-fit: cover;/*画像引き伸ばし防止のため。画像はみ出るのこれのせい*/
+    border-radius: 5%;
+    position: absolute;/*  絶対配置を指定して場所の指定に使う */
+    top: 20px; /*上辺からの距離*/
+
+}
+
+.p-top03-shops-word{
+    position: absolute;
+    top: 55%;
+    padding:0 5%;
 }
 
 .fa-solid {
-    color: #0B619E;
+    color:#ABA89A;
+}
+
+.p-top03-shops-close{
+    padding: 5px 0;
 }
 
 /*ペリーさんのところ、かもめたち*/
@@ -591,34 +642,35 @@ to {
     display: flex;
     justify-content:center ;
     align-items: center;
-    position: relative;
+    position: absolute;
     height: 25%;
+    bottom: 5%;
 }
 
 .ship{
     background-color: rgba(225,225,225,0.0);
     height:100%;
     width: auto;
-    position: relative;
-    bottom: -30%;
-    left:20% ;
+    /* position: absolute; */
+    /* bottom: -30%;*/
+    /* left:20% ;  */
 
 }
 .kamome1{
     background-color: rgba(225,225,225,0.0);
     height:20%;
-    position: relative;
-    bottom: 10%;
-    right: 5%;
+    position: absolute;
+    top: 5%;
+    right: 50%;
 
 }
 
 .kamome2{
     background-color: rgba(225,225,225,0.0);
     height: 20%;
-    position:relative;
-    bottom: 5%;
-    left: 10%;
+    position:absolute;
+    top: 5%;
+    right: 1%;
 }
 @media only screen and (max-width: 1200px) {
     .silder02{
@@ -638,7 +690,7 @@ to {
        width: 120px;
        margin: 20px auto;
        display: block;
-       background-color: #666;
+       background-color: #ABA89A;
        color: #fff;
        padding:10px 15px;
        border: none;
@@ -651,10 +703,13 @@ to {
        content: "もっと見る";
        transition: .2s;
        -erbkit-transition: .2s;
+       margin: 2px;
        }
        
     button.more.on-click::after{
        content: "閉じる";
+       margin: 20px;
+
        }
 
        /*デコレーション*/
@@ -662,32 +717,6 @@ to {
         display: flex;
         justify-content:center ;
         align-items: center;
-        height: 30vw;
-    }
-
-    .ship{
-        background-color: rgba(225,225,225,0.0);
-        height:50%;
-        width: auto;
-        position: relative;
-        bottom: -20%;
-        left:20% ;
-
-    }
-    .kamome1{
-        background-color: rgba(225,225,225,0.0);
-        height:10%;
-        position: relative;
-        bottom: 10%;
-        right: 5%;
-
-    }
-
-    .kamome2{
-        background-color: rgba(225,225,225,0.0);
-        height: 10%;
-        position: relative;
-        left: 10%;
     }
         }
 
@@ -747,9 +776,19 @@ to {
 
 .p-top05_link{
     display: inline-block;
-    border: 1px black solid;
+    color: white;
     padding: 10px 30px;
-    border-radius: 5%;
+    border-radius: 4%;
+    background-color: #ABA89A;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all  0.3s ease;
+}
+
+.p-top05_link:hover{
+    background-color: #A5CCDD;
+    color: white;
 }
 
 .pic_sandal, .pic_suna{
